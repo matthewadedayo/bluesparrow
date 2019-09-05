@@ -1,0 +1,600 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <!--Update-->
+                <prop key="mc_add_content_cat_mst.htm">contentController</prop>
+                <prop key="mc_add_sub_cat_mst.htm">contentController</prop>
+                
+                <prop key="ajax_get_cont_cat.htm">contentController</prop>
+                <prop key="ajax_get_cont_sub_cat.htm">contentController</prop>
+                
+                <prop key="add_content_sub_cat_mst.htm">contentController</prop>
+                
+                <prop key="edit_content_sub_cat_mst_details.htm">contentController</prop>
+                <prop key="edit_content_cat_mst_details.htm">contentController</prop>
+                
+                <prop key="edit_category_master_status.htm">contentController</prop>
+                
+                <prop key="edit_sub_category_master_status.htm">contentController</prop>
+                
+                <prop key="mc_add_content_mster.htm">contentController</prop>
+                
+                <prop key="add_content_master.htm">contentController</prop>
+                
+                <prop key="demo.htm">contentController</prop>
+                <prop key="demoo.htm">contentController</prop>
+                
+                
+                <prop key="mc_add_banner_master.htm">contentController</prop>
+                
+                <prop key="get_thumbnail.htm">reviewContentController</prop>
+                
+                <prop key="edit_content_master_details.htm">contentController</prop>
+                
+                <prop key="get_portal_by_cat_status.htm">contentController</prop>
+                
+                <prop key="edit_metadata_detail_status.htm">contentController</prop>
+                <prop key="bk_save_content_files_details.htm">contentController</prop>
+                <prop key="mc_list_content_portal.htm">contentController</prop>
+                <prop key="get_banner_by_status_type.htm">contentController</prop>
+                <prop key="get_portal_by_status.htm">contentController</prop>
+                <prop key="save_content_sub_cat_mst_details.htm">contentController</prop>
+                <prop key="get_sub_cat_by_cat_stat.htm">contentController</prop>
+                <prop key="get_porta_type_map_by_typ_stat.htm">contentController</prop>
+                <prop key="get_portal_cat_map_by_stat.htm">contentController</prop>
+                <prop key="bk_add_content_file.htm">contentController</prop>
+                
+                <prop key="mc_cont_port_cat_mp.htm">contentController</prop>
+                <prop key="mc_port_cont_mp.htm">contentController</prop>
+                <prop key="mc_cont_port_type_mp.htm">contentController</prop>
+                <!--Update-->
+                
+                <!--Faqs-->
+                <prop key="mc_list_fag_mster.htm">supportController</prop>
+                <prop key="mc_add_faq_mster.htm">supportController</prop>
+                <prop key="add_faqs_master.htm">supportController</prop>
+                <prop key="edit_faqs_details.htm">supportController</prop>
+                <prop key="save_faqs_master.htm">supportController</prop>
+                
+                <!--Subscription-->
+                <prop key="mc_list_sub_mster.htm">supportController</prop>
+                <prop key="mc_add_sub_mster.htm">supportController</prop>
+                
+                
+                <prop key="mc_add_feat_mster.htm">supportController</prop>
+                <prop key="mc_list_feat_mster.htm">supportController</prop>
+                <prop key="add_feat.htm">supportController</prop>
+                
+                <prop key="ajax_get_feature_text.htm">supportController</prop>
+                <prop key="ajax_get_feature_text2.htm">supportController</prop>
+                
+                <prop key="add_sub.htm">supportController</prop>
+                <prop key="save_sub.htm">supportController</prop>
+                <prop key="edit_sub.htm">supportController</prop>
+                
+                <!--Billing/Coupon-->
+                <prop key="coupon_list.htm">couponController</prop>
+                <prop key="mc_add_coupon.htm">couponController</prop>
+                <prop key="add_coupon.htm">couponController</prop>
+                <prop key="coupon_map.htm">couponController</prop>
+                <prop key="map_coupon.htm">couponController</prop>
+                <prop key="get_coupon_by_country.htm">couponController</prop>
+                
+       
+                    
+                <!--Login Controller-->
+                <prop key="index.htm">indexController</prop>
+                <prop key="login.htm">loginController</prop>
+                <prop key="log_out.htm">loginController</prop>
+                <prop key="home.htm">loginController</prop>
+                <prop key="user_list.htm">loginController</prop>
+                <!--<prop key="menu_list.htm">menuController</prop>-->
+                
+                
+                <!--User Controller-->
+                <prop key="mc_add_user.htm">userMasterController</prop>
+                <prop key="mc_list_user.htm">userMasterController</prop>
+                <prop key="add_user.htm">userMasterController</prop>
+                
+                <prop key="edit_user_master_status.htm">userMasterController</prop>
+                
+                <prop key="edit_user_details.htm">userMasterController</prop>
+                
+                <prop key="save_user_details.htm">userMasterController</prop>
+                
+                <!--Menu Controller-->
+                <prop key="get_menu_by_status_type.htm">menuController</prop>
+                <prop key="get_menuchild_by_status_type.htm">menuController</prop>
+                <prop key="mc_list_menu.htm">menuController</prop>
+                <prop key="mc_add_menu.htm">menuController</prop>
+                <prop key="mc_list_menu_child.htm">menuController</prop>
+                <prop key="mc_add_menu_child.htm">menuController</prop>
+                <prop key="add_menu.htm">menuController</prop>
+                <prop key="add_menu_child.htm">menuController</prop>
+                
+                <prop key="mc_map_screen.htm">menuController</prop>
+                <prop key="get_role_menu_map.htm">menuController</prop>
+                <prop key="get_role_menu_child_map.htm">menuController</prop>
+                <prop key="edit_menu_master_status.htm">menuController</prop>
+                <prop key="edit_menu_child_status.htm">menuController</prop>
+                
+                <prop key="edit_menu_mapping_status.htm">menuController</prop>
+                
+                <prop key="mc_add_user_menu_mapping.htm">menuController</prop>
+                <prop key="mc_add_user_menu_mapping1.htm">menuController</prop>
+                
+                <prop key="load_child_menu.htm">menuController</prop>
+                
+                <prop key="add_priviledge.htm">menuController</prop>
+                <prop key="add_priviledge_child.htm">menuController</prop>
+                
+                <prop key="edit_menu_master_details.htm">menuController</prop>
+                <prop key="save_menu_master_details.htm">menuController</prop>
+                <prop key="edit_menu_child_details.htm">menuController</prop>
+                <prop key="save_menu_child_details.htm">menuController</prop>
+                
+                
+                
+                <prop key="mc_list_content_mster.htm">contentController</prop>
+                
+                <prop key="mc_add_content_file.htm">contentController</prop>
+                
+                
+                
+                <prop key="add_content_cat_mst.htm">contentController</prop>
+                <prop key="get_portal_content_mpp.htm">contentController</prop>
+                <prop key="mc_content_cat_map_screen.htm">contentController</prop>
+                
+                <prop key="mc_add_list_content_portal_mst.htm">contentController</prop>
+                <prop key="add_list_content_portal_mst.htm">contentController</prop>
+                
+                
+                <prop key="edit_content_master_status.htm">contentController</prop>
+                
+                <prop key="edit_content_category_mapping_status.htm">contentController</prop>
+                <prop key="edit_content_portal_master_status.htm">contentController</prop>
+                <prop key="edit_content_file_status.htm">contentController</prop>
+                
+                <prop key="add_content_file.htm">contentController</prop>
+                
+                
+                
+                
+                <prop key="add_content_master_url.htm">contentController</prop>
+                
+                
+                <prop key="edit_content_files_details.htm">contentController</prop>
+                
+                <prop key="save_content_files_details.htm">contentController</prop>
+                <prop key="save_content_cat_mst_details.htm">contentController</prop>
+                
+                
+                <prop key="save_content_master_details.htm">contentController</prop>
+                
+                <prop key="edit_content_portal_master_details.htm">contentController</prop>
+                <prop key="save_content_portal_master_details.htm">contentController</prop>
+                
+                <prop key="edit_portal_cat_map_status.htm">contentController</prop>
+                <prop key="edit_portal_type_map_status.htm">contentController</prop>
+                <prop key="edit_portal_cont_map_status.htm">contentController</prop>
+                <prop key="add_content_cat_mpp.htm">contentController</prop>
+                
+                <prop key="get_content_portal_cat_mpp.htm">contentController</prop>
+                <prop key="get_content_type_portal_mpp.htm">contentController</prop>
+                
+                <prop key="mc_add_md_content.htm">contentController</prop>
+                <prop key="add_content_meta_detail.htm">contentController</prop>
+                
+                <prop key="edit_content_meta_details.htm">contentController</prop>
+                <prop key="save_content_meta_details.htm">contentController</prop>
+                <prop key="get_content_cat.htm">contentController</prop>
+                
+                
+                
+                
+                <prop key="add_banner_master.htm">contentController</prop>
+                <prop key="mc_list_banner_master.htm">contentController</prop>
+                <prop key="edit_banner_master_status.htm">contentController</prop>
+                <prop key="edit_banner_details.htm">contentController</prop>
+                <prop key="save_banner_details.htm">contentController</prop>
+                
+                
+                
+                <prop key="get_portal_by_cat_status_rev.htm">reviewContentController</prop>
+                
+                
+                
+                
+                
+                
+                
+                <prop key="mc_review_content.htm">reviewContentController</prop>
+                <prop key="search_content.htm">reviewContentController</prop>
+                <prop key="review_option.htm">reviewContentController</prop>
+                
+                
+                <prop key="download.htm">contentController</prop>
+                
+                
+                
+                
+                <prop key="mc_list_handset.htm">handsetController</prop>
+                <prop key="mc_add_handset.htm">handsetController</prop>
+                <prop key="add_handset.htm">handsetController</prop>
+                <prop key="save_handset.htm">handsetController</prop>
+                
+                <prop key="edit_handset_profile_mst_details.htm">handsetController</prop>
+                
+            </props>
+        </property>
+    </bean>
+    
+    
+    
+    
+    
+    
+    
+    <!--controller-->
+    <bean id="loginController" class="controller.LoginController">
+        <property name="userMasterService" ref="userMasterService" />
+        <property name="menuMappingService" ref="menuMappingService" />
+        <property name="menuMasterService" ref="menuMasterService" />
+        <property name="menuChildService" ref="menuChildService" />
+        <property name="contentMasterService" ref="contentMasterService" />
+        <property name="contentCategoryMasterService" ref="contentCategoryMasterService" />
+        <property name="menuHistoryService" ref="menuHistoryService" />
+        <property name="historyService" ref="historyService" />
+        
+    </bean>
+    
+    
+    
+    <bean id="userMasterController" class="controller.UserMasterController">
+        <property name="userMasterService" ref="userMasterService" />
+        <property name="menuMappingService" ref="menuMappingService" />
+        <property name="menuMasterService" ref="menuMasterService" />
+        <property name="menuChildService" ref="menuChildService" />
+        <property name="contentMasterService" ref="contentMasterService" />
+        <property name="menuHistoryService" ref="menuHistoryService" />
+        <property name="contentCategoryMasterService" ref="contentCategoryMasterService" />
+    </bean>
+    
+    <bean id="menuController" class="controller.MenuController">
+        <property name="menuMasterService" ref="menuMasterService" />
+        <property name="userMasterService" ref="userMasterService" />
+        <property name="menuChildService" ref="menuChildService" />
+        <property name="menuMappingService" ref="menuMappingService" />
+        <property name="menuHistoryService" ref="menuHistoryService" />
+    </bean>
+    
+    <bean id="handsetController" class="controller.HandsetController">
+        <property name="menuMasterService" ref="menuMasterService" />
+        <property name="menuChildService" ref="menuChildService" />
+        <property name="handsetProfileMasterService" ref="handsetProfileMasterService" />
+    </bean>
+    
+    <bean id="supportController" class="controller.SupportController">
+        <!--Not Used Begins-->
+        <property name="menuMasterService" ref="menuMasterService" />
+        <property name="menuChildService" ref="menuChildService" />
+        <property name="handsetProfileMasterService" ref="handsetProfileMasterService" />
+        
+        <property name="contentPortalMasterService" ref="contentPortalMasterService" />
+        
+        <!--Not Used Ends-->
+        
+        <property name="faqsMasterService" ref="faqsMasterService" />
+        <property name="featureMasterService" ref="featureMasterService" />
+        <property name="faqPortalMappingService" ref="faqPortalMappingService" />
+        <property name="subscriptionMasterService" ref="subscriptionMasterService" />
+        
+        <property name="subscriptionFeatureMappingService" ref="subscriptionFeatureMappingService" />
+        
+        
+    </bean>
+    
+    <bean id="contentController" class="controller.ContentController">
+        <property name="menuMasterService" ref="menuMasterService" />
+        <property name="menuChildService" ref="menuChildService" />
+        <property name="menuMappingService" ref="menuMappingService" />
+        <property name="contentMasterService" ref="contentMasterService" />
+        <property name="bannerMasterService" ref="bannerMasterService" />
+        <property name="contentFileService" ref="contentFileService" />
+        <property name="contentCategoryMasterService" ref="contentCategoryMasterService" />
+        <property name="contentCategoryMappingService" ref="contentCategoryMappingService" />
+        <property name="contentPortalCategoryMappingService" ref="contentPortalCategoryMappingService" />
+        <property name="contentTypePortalMappingService" ref="contentTypePortalMappingService" />
+        <property name="contentPortalMappingService" ref="contentPortalMappingService" />
+        <property name="contentPortalMasterService" ref="contentPortalMasterService" />
+        <property name="userMasterService" ref="userMasterService" />
+        <property name="menuHistoryService" ref="menuHistoryService" />
+        
+        
+        <property name="contentMetaDetailsService" ref="contentMetaDetailsService" />
+        <property name="contentMetaMasterService" ref="contentMetaMasterService" />
+        
+        <property name="contentTypeMasterService" ref="contentTypeMasterService" />
+        
+        
+        <property name="contentSubCategoryMasterService" ref="contentSubCategoryMasterService" /> 
+    </bean>
+    
+    <bean id="couponController" class="controller.CouponController">
+        <property name="couponMasterService" ref="couponMasterService" />
+        <property name="couponMappingTypeService" ref="couponMappingTypeService" />
+        <property name="contentPortalMasterService" ref="contentPortalMasterService" />
+
+    </bean>
+    
+    <bean id="reviewContentController" class="controller.ReviewContentController">
+        <property name="menuMasterService" ref="menuMasterService" />
+        <property name="menuChildService" ref="menuChildService" />
+        <property name="menuMappingService" ref="menuMappingService" />
+        <property name="contentMasterService" ref="contentMasterService" />
+        <property name="contentFileService" ref="contentFileService" />
+        <property name="contentCategoryMasterService" ref="contentCategoryMasterService" />
+        <property name="contentCategoryMappingService" ref="contentCategoryMappingService" />
+        <property name="contentPortalCategoryMappingService" ref="contentPortalCategoryMappingService" />
+        <property name="contentPortalMasterService" ref="contentPortalMasterService" />
+        <property name="contentTypeMasterService" ref="contentTypeMasterService" />
+        <property name="menuHistoryService" ref="menuHistoryService" />
+    </bean>
+    
+    
+    
+    
+    <!--Service-->
+    <bean id="couponMasterService" class="service.CouponMasterServiceImp">
+        <property name="couponMasterDao" ref="couponMasterDao" />
+    
+    </bean>
+    
+    <bean id="couponMappingTypeService" class="service.CouponMappingTypeServiceImp">
+        <property name="couponMappingTypeDao" ref="couponMappingTypeDao" />
+    
+    </bean>
+    <bean id="userMasterService" class="service.UserMasterServiceImp">
+        <property name="userMasterDao" ref="userMasterDao" />
+    
+    </bean>
+    <bean id="historyService" class="service.HistoryServiceImp">
+        <property name="historyDao" ref="historyDao" />
+    
+    </bean>
+    <bean id="faqsMasterService" class="service.FaqsMasterServiceImp">
+        <property name="faqsMasterDao" ref="faqsMasterDao" />
+    
+    </bean>
+    <bean id="featureMasterService" class="service.FeatureMasterServiceImp">
+        <property name="featureMasterDao" ref="featureMasterDao" />
+    
+    </bean>
+    <bean id="subscriptionMasterService" class="service.SubscriptionMasterServiceImp">
+        <property name="subscriptionMasterDao" ref="subscriptionMasterDao" />
+    
+    </bean>
+    <bean id="subscriptionFeatureMappingService" class="service.SubscriptionFeatureMappingServiceImp">
+        <property name="subscriptionFeatureMappingDao" ref="subscriptionFeatureMappingDao" />
+    
+    </bean>
+    <bean id="faqPortalMappingService" class="service.FaqPortalMappingServiceImp">
+        <property name="faqPortalMappingDao" ref="faqPortalMappingDao" />
+    
+    </bean>
+    <bean id="menuMappingService" class="service.MenuMappingServiceImp">
+        <property name="menuMappingDao" ref="menuMappingDao" />
+    
+    </bean>
+    <bean id="menuChildService" class="service.MenuChildServiceImp">
+        <property name="menuChildDao" ref="menuChildDao" />
+    
+    </bean>
+    <bean id="menuMasterService" class="service.MenuMasterServiceImp">
+        <property name="menuMasterDao" ref="menuMasterDao" />
+    
+    </bean>
+    
+    <bean id="contentMasterService" class="service.ContentMasterServiceImp">
+        <property name="contentMasterDao" ref="contentMasterDao" />
+    
+    </bean>
+    
+    <bean id="contentTypeMasterService" class="service.ContentTypeMasterServiceImp">
+        <property name="contentTypeMasterDao" ref="contentTypeMasterDao" />
+    
+    </bean>
+    
+    <bean id="bannerMasterService" class="service.BannerMasterServiceImp">
+        <property name="bannerMasterDao" ref="bannerMasterDao" />
+    
+    </bean>
+    
+    <bean id="contentMetaDetailsService" class="service.ContentMetaDetailsServiceImp">
+        <property name="contentMetaDetailsDao" ref="contentMetaDetailsDao" />
+    
+    </bean>
+    <bean id="contentMetaMasterService" class="service.ContentMetaMasterServiceImp">
+        <property name="contentMetaMasterDao" ref="contentMetaMasterDao" />
+    
+    </bean>
+    <bean id="contentFileService" class="service.ContentFileServiceImp">
+        <property name="contentFileDao" ref="contentFileDao" />
+    
+    </bean>
+    <bean id="contentCategoryMasterService" class="service.ContentCategoryMasterServiceImp">
+        <property name="contentCategoryMasterDao" ref="contentCategoryMasterDao" />
+    
+    </bean>
+    
+    <bean id="contentSubCategoryMasterService" class="service.ContentSubCategoryMasterServiceImp">
+        <property name="contentSubCategoryMasterDao" ref="contentSubCategoryMasterDao" />
+    
+    </bean>
+    <bean id="contentPortalMasterService" class="service.ContentPortalMasterServiceImp">
+        <property name="contentPortalMasterDao" ref="contentPortalMasterDao" />
+    
+    </bean>
+    <bean id="handsetProfileMasterService" class="service.HandsetProfileMasterServiceImp">
+        <property name="handsetProfileMasterDao" ref="handsetProfileMasterDao" />
+    
+    </bean>
+    <bean id="contentCategoryMappingService" class="service.ContentCategoryMappingServiceImp">
+        <property name="contentCategoryMappingDao" ref="contentCategoryMappingDao" />
+    
+    </bean>
+    <bean id="contentPortalCategoryMappingService" class="service.ContentPortalCategoryMappingServiceImp">
+        <property name="contentPortalCategoryMappingDao" ref="contentPortalCategoryMappingDao" />
+    
+    </bean>
+    
+    <bean id="contentTypePortalMappingService" class="service.ContentTypePortalMappingServiceImp">
+        <property name="contentTypePortalMappingDao" ref="contentTypePortalMappingDao" />
+    
+    </bean>
+    
+    <bean id="menuHistoryService" class="service.MenuHistoryServiceImp">
+        <property name="menuHistoryDao" ref="menuHistoryDao" />
+    
+    </bean>
+    <bean id="contentPortalMappingService" class="service.ContentPortalMappingServiceImp">
+        <property name="contentPortalMappingDao" ref="contentPortalMappingDao" />
+    
+    </bean>
+    
+    
+    <!--Dao-->
+    <bean id="userMasterDao" class="dao.UserMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="historyDao" class="dao.HistoryDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="faqsMasterDao" class="dao.FaqsMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="featureMasterDao" class="dao.FeatureMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="subscriptionMasterDao" class="dao.SubscriptionMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="subscriptionFeatureMappingDao" class="dao.SubscriptionFeatureMappingDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="faqPortalMappingDao" class="dao.FaqPortalMappingDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="menuMappingDao" class="dao.MenuMappingDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="menuChildDao" class="dao.MenuChildDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="menuMasterDao" class="dao.MenuMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="menuHistoryDao" class="dao.MenuHistoryDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="contentMasterDao" class="dao.ContentMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="contentTypeMasterDao" class="dao.ContentTypeMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="bannerMasterDao" class="dao.BannerMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+     <bean id="contentMetaDetailsDao" class="dao.ContentMetaDetailsDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="contentMetaMasterDao" class="dao.ContentMetaMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="contentFileDao" class="dao.ContentFileDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="contentCategoryMasterDao" class="dao.ContentCategoryMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="contentSubCategoryMasterDao" class="dao.ContentSubCategoryMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="contentPortalMasterDao" class="dao.ContentPortalMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="handsetProfileMasterDao" class="dao.HandsetProfileMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="contentCategoryMappingDao" class="dao.ContentCategoryMappingDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="contentPortalCategoryMappingDao" class="dao.ContentPortalCategoryMappingDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="contentTypePortalMappingDao" class="dao.ContentTypePortalMappingDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="contentPortalMappingDao" class="dao.ContentPortalMappingDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="couponMasterDao" class="dao.CouponMasterDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="couponMappingTypeDao" class="dao.CouponMappingTypeDaoImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+  
+    
+<!--    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+            </props>
+        </property>
+    </bean>-->
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="login" />
+    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+</beans>

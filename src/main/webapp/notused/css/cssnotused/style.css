@@ -1,0 +1,18 @@
+
+
+
+
+a.ico { color:#9d9c9a; font-size:13px; text-decoration: none; padding:0 0 0 18px; background-repeat:no-repeat; background-position:0 0; }
+a.ico:hover { color:#333;}
+a.del { background-image:url("../images/del.gif")}
+a.ok { background-image:url("../images/ok.gif")}
+a.edit { background-image:url("../images/edit.gif"); margin-left:20px;}
+a.enable { background-image:url("../images/enable.gif"); margin-left:20px;}
+a.disable { background-image:url("../images/disable.gif"); margin-left:20px;}
+a.auto { background-image:url("../images/auto.gif"); margin-left:20px;}
+
+
+a.m-wizard__step-number-2>span {
+    background-color: #34bfa3 !important;
+}
+

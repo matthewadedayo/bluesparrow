@@ -1,0 +1,151 @@
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+	WebFont.load({
+    google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+  });
+</script>
+
+<!--end::Web font -->
+<link rel="stylesheet" href="css/style.css">
+<!--begin::Global Theme Styles -->
+<link href="assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+
+<!--RTL version:<link href="assets/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+<link href="assets/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+
+<!--RTL version:<link href="assets/default/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+
+<!--end::Global Theme Styles -->
+
+<!--begin::Page Vendors Styles -->
+<link href="assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+
+<!--RTL version:<link href="assets/vendors/custom/fullcalendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+
+<!--end::Page Vendors Styles -->
+<link rel="shortcut icon" href="assets/default/media/img/logo/favicon.ico" />
+
+<!-- Form validator --->
+<link rel="stylesheet" type="text/css" href="assets/vendors/form-validator-master/validator.css">
+<style type="text/css">
+	.m-datatable1 {
+		border: 0px !important;
+	}
+
+	.m-datatable1 tr:nth-child(even) {
+		background: linear-gradient(5deg, #efefef, #fff)
+	}
+	.m-datatable1 > thead > tr > th {
+		padding: 10px;
+		border: 1px solid #ccc
+	}
+
+	.m-datatable1 > tbody > tr > td{
+
+	}
+
+	.m-datatable1 tr:nth-child(even){
+		box-shadow: 3px 4px 10px #ccc;
+	}
+	.m-datatable1 td {
+		padding: 17.5px
+	}
+	.m-datatable1 .fa-star {
+		color:gold;
+	}
+	.m-datatable1 tr:hover {
+		background: linear-gradient(5deg, #fbfbfb, #fff);
+		box-shadow: 3px 4px 10px #ccc;
+	}
+
+	.mquestion {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 20px;
+		margin-bottom: 5px;
+		box-shadow: 1px 2px 10px #ccc;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 10px
+	}
+
+	.mquestion > .mq-left {
+		text-align: left;
+	}
+
+	.mquestion > .mq-right {
+		text-align: right;
+	}
+
+	.mquestion > .mtitle {
+		font-weight: 400;
+
+	}
+	.mquestion > .help-block, .reply-question > .questions > .help-block, .reply-question > .answers > .answer-single .answer-time  {
+		color:#b1b1b1;
+	}
+
+	.reply-question > .answers {
+		max-height: 90%;
+		min-height: 100px;
+		overflow-y: scroll;
+	}
+
+
+
+	.reply-question > .answers > .answer-single {
+		padding: 10px;
+		text-align: right;
+		overflow: hidden;
+	}
+
+	.reply-question > .answers > .answer-single > span {
+		box-shadow: 1px 2px 10px #ccc;
+		border-top-right-radius: 30px;
+		border-bottom-left-radius: 30px;
+		border-top-left-radius: 30px;
+		padding:20px;
+		text-align: left;
+		max-width: 80%;
+		display: block;
+		float:right;
+	}
+
+	.reply-question > .answers > .answer-single > span > .delete, .reply-question > .answers > .answer-single > span > .edit > a {
+		float: right;
+	}
+
+	.reply-question > .answers > .answer-single > span > .delete > a {
+		color:red;
+	}
+
+
+	.reply-question > .answers > .answer-single > span > .delete > a:hover {
+		
+		animation: twist 1s ease-in infinite;
+	}
+
+	.answers > .answer-single .answer-time  {
+		font-size: 12px;
+		float: right
+	}
+
+	.hideMe {
+		display: none;
+	}
+
+	@keyframes twist {
+		0% {
+			color:#edacba;
+		}
+		50% {
+			color:#333;
+		}
+
+		100% {
+			color:#edacba;
+		}
+	}
+</style>
